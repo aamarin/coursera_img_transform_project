@@ -11,8 +11,8 @@
 
 Write your name and email address in the comment space here:
 
-Name:
-Email:
+Name:Andre Marin
+Email: andre@alexamarin.com
 
 (...end multi-line comment.)
 ******************** */
@@ -84,10 +84,20 @@ PNG createSpotlight(PNG image, int centerX, int centerY) {
  * @return The illinify'd image.
 **/
 PNG illinify(PNG image) {
-
+  for (unsigned x = 0; x < image.width(); x++) {
+    for (unsigned y = 0; y < image.height(); y++) {
+      HSLAPixel & pixel = image.getPixel(x, y);
+      if( pixel.h >= 200 && pixel.h < 330) {
+        pixel.h = 216;
+      }
+      else {
+        pixel.h = 11;
+      }
+    }
+  }
   return image;
 }
- 
+
 
 /**
 * Returns an immge that has been watermarked by another image.
