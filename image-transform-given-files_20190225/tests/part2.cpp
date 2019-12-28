@@ -29,8 +29,6 @@ PNG createWatermark() {
   return png;
 }
 
-
-/*
 TEST_CASE("createSpotlight", "[weight=1]") {
   PNG png = createRainbowPNG();
   PNG result = createSpotlight(png, 100, 50);
@@ -51,7 +49,7 @@ TEST_CASE("createSpotlight", "[weight=1]") {
     REQUIRE( png.getPixel(100 + 3, 50 + 4).l * 0.975 == Approx(result.getPixel(100 + 3, 50 + 4).l) );
   }
 }
-*/
+
 
 TEST_CASE("illinify", "[weight=1]") {
   PNG png = createRainbowPNG();

@@ -67,11 +67,30 @@ PNG grayscale(PNG image) {
  * @return The image with a spotlight.
  */
 PNG createSpotlight(PNG image, int centerX, int centerY) {
+  unsigned newx = static_cast<unsigned>(centerX);
+  unsigned newy = static_cast<unsigned>(centerY);
+
+  for (unsigned x = 0; x < image.width(); ++x) {
+    for (unsigned y = 0; y < image.height(); ++y) {
+      if(x == newx && y == newy) {
+        continue;
+      }
+
+      HSLAPixel & pixel = image.getPixel(x, y);
+      double lum = std::sqrt((newx-x)*(newx-x) + (newy-y)*(newy-y))*static_cast<double>(0.005);
+
+      if (lum >= static_cast<double>(0.8)) {
+        lum = static_cast<double>(0.8);
+      }
+      lum = 1.0 - lum;
+      pixel.l =  (pixel.l * lum);
+    }// y
+  }// x
 
   return image;
-  
+
 }
- 
+
 
 /**
  * Returns a image transformed to Illini colors.
@@ -112,6 +131,5 @@ PNG illinify(PNG image) {
 * @return The watermarked image.
 */
 PNG watermark(PNG firstImage, PNG secondImage) {
-
   return firstImage;
 }
