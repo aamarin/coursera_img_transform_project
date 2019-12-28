@@ -44,7 +44,6 @@ TEST_CASE("HSLAPixel's default constructor should create an opaque pixel", "[wei
   REQUIRE( pixel.a == 1 );
 }
 
-
 // HSLAPixel 3-param constructor
 TEST_CASE("HSLAPixel's HSL constructor should create a pixel with provided HSL values", "[weight=1]") {
   HSLAPixel pixel(260, 0.8, 0.7);
@@ -57,7 +56,6 @@ TEST_CASE("HSLAPixel's HSL constructor should create an opaque pixel", "[weight=
   HSLAPixel pixel(260, 0.8, 0.7);
   REQUIRE( pixel.a == 1 );
 }
-
 
 // HSLAPixel 4-param constructor
 TEST_CASE("HSLAPixel's HSLA constructor should create a pixel with provided HSLA values", "[weight=1]") {

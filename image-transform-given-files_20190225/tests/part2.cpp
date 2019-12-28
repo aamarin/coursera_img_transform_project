@@ -91,7 +91,7 @@ TEST_CASE("illinify_edge_case", "[weight=1]") {
     REQUIRE( result.getPixel(350, 23).h == 11 );
   }
 }
-/*
+
 TEST_CASE("watermark", "[weight=1]") {
   PNG png = createRainbowPNG();
   PNG wm = createWatermark();
@@ -108,4 +108,3 @@ TEST_CASE("watermark", "[weight=1]") {
     REQUIRE( png.getPixel(200, 25).l + 0.2 == result.getPixel(200, 25).l );
   }
 }
-*/
