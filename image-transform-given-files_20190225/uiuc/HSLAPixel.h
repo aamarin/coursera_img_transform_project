@@ -17,12 +17,12 @@ namespace uiuc {
 class HSLAPixel {
   public:
     double h;
-    double l;
     double s;
+    double l;
     double a;
 
-    HSLAPixel(double h, double l, double s, double a):h(h),l(l),s(s),a(a) {}
-    HSLAPixel():HSLAPixel(0.0,0.0,0.0,0.0){}
+    HSLAPixel(double h, double s, double l=1.0, double a=1.0):h(h),s(s),l(l),a(a) {}
+    HSLAPixel():HSLAPixel(1.0,1.0,1.0,1.0){}
 };
 
 }
